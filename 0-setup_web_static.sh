@@ -7,8 +7,13 @@ if ! dpkg -l | grep -q nginx; then
 fi
 
 sudo ufw allow 'Nginx HTTP'
+
+mkdir -p /data/
+mkdir -p /data/web_static/
+mkdir -p /data/web_static/releases/
 mkdir -p /data/web_static/releases/test/
 mkdir -p /data/web_static/shared/
+
 sudo echo "
 <html>
   <head>
