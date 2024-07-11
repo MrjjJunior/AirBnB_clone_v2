@@ -7,24 +7,24 @@ from datetime import datetime
 from fabric.api import local
 import os
 
+
 def do_pack():
     ''' generates a .tgz archive '''
-    #creating versions dir
+    # creating versions dir
     if not os.path.exists("versions"):
         os.makedirs("versions")
-    
-    #getting the time 
+
+    # getting the time
     time = datetime.now()
     date = time.strtime("%Y%m%d%H%M%s")
 
-    #creating name of the archive
+    # creating name of the archive
     archive_name = "web_static_{}.tgz".format(date)
     archive_path = "versions/{}".format(archive_name)
 
-    #creating archive
+    # creating archive
     try:
         local("tar -cvzf {} web_static".format(archive_path))
         return archive_path
-    except:
+    except Exception:
         return None
-
