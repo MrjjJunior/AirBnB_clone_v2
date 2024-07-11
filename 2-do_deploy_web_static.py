@@ -1,7 +1,4 @@
 #!/usr/bin/python
-'''
-script creates and distributes an archive to web servers
-'''
 from fabric.api import put, run, env
 from os.path import exists
 
