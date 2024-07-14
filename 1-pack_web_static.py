@@ -5,9 +5,10 @@ contents of the web_static folder
 '''
 from datetime import datetime
 from fabric.api import local
+from fabric import task
 import os
 
-
+@task
 def do_pack():
     ''' generates a .tgz archive '''
     # creating versions dir
