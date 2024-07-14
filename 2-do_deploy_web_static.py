@@ -1,8 +1,12 @@
-#!/usr/bin/python
+#!/usr/bin/python3
+'''
+Script distributes an archive to your web servers
+'''
 from fabric.api import put, run, env
 from os.path import exists
 
 env.host = ['100.25.22.66', '3.90.81.154']
+
 
 def do_deploy():
     '''
@@ -10,7 +14,6 @@ def do_deploy():
     '''
     if not os.path.exists(archive_path):
         return False
-    
     try:
         file = archive_path.split("/")[-1]
         folder = file.split(".")[0]
