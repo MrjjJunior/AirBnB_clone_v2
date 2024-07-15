@@ -26,6 +26,15 @@ file { '/data/web_static/releases/test/index.html':
   mode    => '0644',
 }
 
+# Create a symbolic link
+file { '/data/web_static/current':
+  ensure => 'link',
+  target => '/data/web_static/releases/test',
+  owner  => 'ubuntu',
+  group  => 'ubuntu',
+  require => File['/data/web_static/releases/test'],
+}
+
 exec { 'set_permissions':
   command => 'chown -R ubuntu:ubuntu /data',
   path    => '/bin:/usr/bin',
