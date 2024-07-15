@@ -25,7 +25,6 @@ def do_deploy():
         run("sudo rm -rf /data/web_static/releases/{}/web_static".format(folder))
         run("sudo rm -rf /data/web_static/current")
         run("sudo ln -s /data/web_static/releases/{}/ /data/web_static/current".format(folder_name))
-
         return True
     except Exception:
         return False
