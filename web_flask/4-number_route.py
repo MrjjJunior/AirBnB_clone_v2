@@ -22,7 +22,7 @@ def c_is_fun(text):
     return "C " + text.replace('_', ' ')
 
 
-@app.rout('/python', strict_slashes=False)
+@app.route('/python', strict_slashes=False)
 @app.route('/python/<text>', strict_slashes=False)
 def python_is_cool(text='is cool'):
     ''' '''
@@ -32,7 +32,7 @@ def python_is_cool(text='is cool'):
 @app.route('/number/<n>', strict_slashes=False)
 def is_a_number(n):
     '''  '''
-    return ("{:d} is a number".format(n))
+    return "{:d} is a number".format(n)
 
 
 if __name__ == "__main__":
