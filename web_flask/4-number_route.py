@@ -1,7 +1,5 @@
 #!/usr/bin/python3
-"""
-starts a Flask web application
-"""
+""" starts a Flask web application """
 from flask import Flask
 app = Flask(__name__)
 
@@ -29,6 +27,7 @@ def cisfun(text):
 def pythoniscool(text='is cool'):
     """display “Python ”, followed by the value of the text variable"""
     return 'Python ' + text.replace('_', ' ')
+
 
 @app.route('/number/<int:n>', strict_slashes=False)
 def imanumber(n):
